@@ -2,7 +2,8 @@ import {
   useEffect,
   useRef,
   useState,
-  useCallback
+  useCallback,
+  InputHTMLAttributes
 } from 'react';
 
 import { useField } from '@unform/core';
@@ -13,7 +14,7 @@ import { IconBaseProps } from 'react-icons/lib';
 type InputProps = {
   name: string;
   icon?: React.ComponentType<IconBaseProps>;
-}
+} & InputHTMLAttributes<HTMLInputElement>
 
 const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
